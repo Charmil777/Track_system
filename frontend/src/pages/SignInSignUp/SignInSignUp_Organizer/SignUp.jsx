@@ -38,15 +38,20 @@ const Signup = () => {
         const data = {
             username: name,
             email: email,
-            track_name: track_name,
-            start_date: startDate,
-            end_date: endDate,
+            track_list:[
+                {
+                    track_name: track_name,
+                    start_date: startDate,
+                    end_date: endDate,
+                }
+            ],
+            
             resume_link: profile_link,
             password: password,
         };
 
         try {
-            const res = await axios.post('https://track-management.onrender.com/api/organizer_signup', data);
+            const res = await axios.post('http://localhost:5000/api/organizer_signup', data);
             console.log(res.data);
             seterror(false);
             setIndex(0);
@@ -95,6 +100,7 @@ const Signup = () => {
                                 placeholderText="Start date"
                                 className="w-full"
                                 style={{ outline: 'none !important', border: 'none' }}
+                                dateFormat="yyyy/MM/dd"
                             />
                             <DatePicker
                                 selected={endDate}
@@ -106,6 +112,7 @@ const Signup = () => {
                                 placeholderText="End date"
                                 className="w-full"
                                 style={{ outline: 'none !important', border: 'none' }}
+                                dateFormat="yyyy/MM/dd"
                             />
                         </div>
                         <TextField fullWidth label="Share your Profile Link" placeholder="Profile Link " value={profile_link} onChange={(e) => setprofile_link(e.target.value)} required />

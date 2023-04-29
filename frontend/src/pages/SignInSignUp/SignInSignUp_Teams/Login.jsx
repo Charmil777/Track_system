@@ -30,7 +30,7 @@ const Login = ({ handleChange }) => {
 
     const submitAction = async () => {
         try {
-            const res = await axios.post(`https://track-management.onrender.com/api/team_login`, { username: user, password: pwd });
+            const res = await axios.post(`http://localhost:5000/api/team_login`, { team_name: user, team_password: pwd });
             if (res.status === 200) {
                 setUsername(user);
                 localStorage.setItem('user', user);
@@ -40,12 +40,12 @@ const Login = ({ handleChange }) => {
                 navigate(`/api/track?year=${TrackYearMain}&name_code=${TrackNameMain}`); // navigate to next page
             }
         } catch (error) {
-            
-            if (error.response.data.message ) {
+
+            if (error.response.data.message) {
                 seterror(true);
-                setErrorMessage(error.resoponse.data.message);
+                setErrorMessage(error.response.data.message);
                 console.log(error.response.data.message);
-            } 
+            }
             else {
                 console.error(error);
             }
@@ -87,4 +87,4 @@ const Login = ({ handleChange }) => {
     )
 }
 
-export default Login
+export default Login

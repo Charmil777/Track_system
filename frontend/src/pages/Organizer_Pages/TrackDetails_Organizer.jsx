@@ -34,8 +34,8 @@ const TrackDetails_Organizer = () => {
   const { currentColor, TrackNameMain, TrackYearMain, setOptions } = useStateContext();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const year = queryParams.get('year');
-  const name_code = queryParams.get('name_code');
+  const year = localStorage.getItem('year');
+  const name_code = localStorage.getItem('name_code');
   const Navigate = useNavigate();
   const { setTrackNameMain, setTrackYearMain } = useStateContext();
   
@@ -43,7 +43,7 @@ const TrackDetails_Organizer = () => {
 
     setTrackYearMain(year);
     axios
-      .get(`https://track-management.onrender.com/api/track/?year=${year}&name_code=${name_code}`)
+      .get(`http://localhost:5000/api/track/?year=${year}&name_code=${name_code}`)
       .then((response) => setTrack(response.data))
       .catch(err => console.log(err));
 
@@ -103,7 +103,7 @@ const TrackDetails_Organizer = () => {
     try {
       console.log(localStorage.getItem("year"));
       console.log(localStorage.getItem("name_code"));
-      const res = await axios.post('https://track-management.onrender.com/api/update_track', track_data);
+      const res = await axios.post('http://localhost:5000/api/update_track', track_data);
 
       window.history.back();
     } catch (err) {

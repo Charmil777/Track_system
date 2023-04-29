@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Home, Data, CFP, Organizations, PastPrecedings, Resources, CFT, SignInSignUp, SignInSignUp_O, SignInSignUp_T, TrackDetails_Organizer, DisplayTracks, Leaderboard, TrackDetails, Chat } from './pages';
+import { Home, Data, CFP, Organizations, PastPrecedings, Resources, CFT, SignInSignUp, SignInSignUp_O, SignInSignUp_T, TrackDetails_Organizer, DisplayTracks, Leaderboard, TrackDetails, Chat,Admin_Login,Tracks_verification } from './pages';
 import { useStateContext } from './contexts/ContextProvider';
 import Submit from './pages/Submit'
 
@@ -68,7 +68,7 @@ const App = () => {
                                     {/* Archives */}
                                     <Route path="/Data" element={<Data />} />
                                     <Route path="/Resources" element={<Resources />} />
-                                    <Route path="/Past_Precedings" element={<PastPrecedings />} />
+                                    <Route path="/PastPrecedings" element={<PastPrecedings />} />
 
                                     <Route path="/Submit" element={<Submit />} />
                                     <Route path="/Chat" element={<Chat />} />
@@ -97,6 +97,8 @@ const App = () => {
 
 
                                     <Route path="/api/track" element={<TrackDetails />} />
+                                    <Route path="/admin" element={<Admin_Login />} />
+                                    <Route path="/Tracks_verification" element={<Tracks_verification />} />
                                     {/* <Route path="/" element={<App1 />} */}
 
 

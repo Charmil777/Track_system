@@ -121,7 +121,7 @@ const Navbar = () => {
                       onClick={handleLogoutOptions}
                     >
                       {
-                        <p>
+                        <p style={{ color: "currentcolor" }}>
                           Hi, {localStorage.getItem('user')}
                         </p>
                       }
@@ -132,10 +132,10 @@ const Navbar = () => {
                   :
                   (
                     <div
-                      className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+                      className="flex items-center gap-2 cursor-pointer p-1 rounded-lg dark:text-white-200"
                       onClick={handleSignInOptions}
                     >
-                      <p>
+                      <p style={{ color: "currentcolor" }}>
                         Sign in
                       </p>
                       <MdKeyboardArrowDown className="text-gray-400 text-14" />
@@ -209,7 +209,7 @@ const Navbar = () => {
                       onClick={handleLogoutOptions}
                     >
                       {
-                        <p>
+                        <p >
                           Hi,{localStorage.getItem('user')}
                         </p>
                       }
