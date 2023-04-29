@@ -136,7 +136,7 @@ exports.user_login = async (req, res) => {
 
         const token = await jwt.sign(tokenData, "secret", { expiresIn: "1h" });
         console.log("token created");
-
+        
 
         try {
             const r = await axios.get("https://api.chatengine.io/users/me/", {
