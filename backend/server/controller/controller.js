@@ -16,7 +16,6 @@ exports.home = async (req, res) => {
     res.status(200).send("successfull")
 }
 
-
 exports.admin_login = async (req, res) => {
     try {
         //validate request

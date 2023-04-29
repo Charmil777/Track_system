@@ -31,7 +31,7 @@ const Admin_Login = ({ handleChange }) => {
 
     const submitAction = async () => {
         try {
-            const res = await axios.post(`http://localhost:5000/admin`, { username: user, password: pwd });
+            const res = await axios.post(`https://track-management.onrender.com/admin`, { username: user, password: pwd });
             if (res.status === 200) {
                 console.log('User is authenticated');
                 setUsername(user);

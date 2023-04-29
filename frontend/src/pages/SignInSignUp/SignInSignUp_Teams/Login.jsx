@@ -30,7 +30,7 @@ const Login = ({ handleChange }) => {
 
     const submitAction = async () => {
         try {
-            const res = await axios.post(`http://localhost:5000/api/team_login`, { team_name: user, team_password: pwd });
+            const res = await axios.post(`https://track-management.onrender.com/api/team_login`, { team_name: user, team_password: pwd });
             if (res.status === 200) {
                 setUsername(user);
                 localStorage.setItem('user', user);

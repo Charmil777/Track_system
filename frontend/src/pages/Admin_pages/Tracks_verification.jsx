@@ -13,7 +13,7 @@ const TracksTable = () => {
   useEffect(async () => {
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/admin_page`)
+      const response = await axios.get(`https://track-management.onrender.com/api/admin_page`)
       console.log(response);
       // console.log(response.data);
       setTrackData(response.data);
@@ -35,7 +35,7 @@ const TracksTable = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/api/verify_track', data);
+      const res = await axios.post('https://track-management.onrender.com/api/verify_track', data);
       console.log(res.data);
 
     } catch (error) {
@@ -45,7 +45,7 @@ const TracksTable = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/admin_page`)
+      const response = await axios.get(`https://track-management.onrender.com/api/admin_page`)
       console.log(response);
       // console.log(response.data);
       setTrackData(response.data);
